@@ -47,13 +47,14 @@ Según el documento, CSS es fundamental porque:
 - Permite la **creatividad y flexibilidad** en los diseños, desde lo más simple hasta animaciones y efectos\
   (**Kaluvakuri & Vadiyala, 2016, pp. 101-102**).
 -----
-# 1\. Selectores
+# 1\. FUNDAMENTOS Y ESTILO BÁSICO
+## 1\.1 Selectores
 Un selector CSS es el patrón que indica al navegador qué elementos HTML deben recibir los estilos definidos en una regla, estos pueden ser simples o compuestos. Además cuando múltiples reglas coinciden con un mismo elemento la especificidad define qué regla va a prevalecer.
-## 1\.1 Selectores simples
+### 1\.1\.1 Selectores simples
 Los selectores simples son la unidad más básica de selección en CSS. Según la especificación oficial del W3C (Selectors Level 3, 2018), un selector simple describe una condición única que un elemento debe cumplir para ser seleccionado.
 
 De acuerdo con Grant (2017), los selectores simples se dividen en:
-- ## *Selectores de tipo*
+- #### *Selectores de tipo*
 También denominado selector de etiqueta o elemento, ya que aplica estilos a todos los elementos de un mismo tipo (párrafos, títulos, divs, etc.). *Ejemplo.* Si se desea que todos los párrafos tengan el mismo color de texto y tamaño de letra, se usaría:
 ~~~ css
 p {
@@ -61,7 +62,7 @@ p {
   font-size: 16px;
 }
 ~~~
-- ## *Selectores de clase*
+- #### *Selectores de clase*
 Sirve para aplicar estilos a uno o varios elementos HTML que tengan el mismo atributo class, comienza con un punto (.) *Ejemplo.* Se implementan 3 clases, "importante" tiene definido el texto en rojo y negrita, "nota" texto en azul e inclinado, "advertencia" texto con fondo amarillo.
 ~~~ css
  .importante {
@@ -78,7 +79,7 @@ Sirve para aplicar estilos a uno o varios elementos HTML que tengan el mismo atr
   padding: 5px;
 }
 ~~~
-- ## *Selectores de ID*
+- #### *Selectores de ID*
 El selector de ID en CSS se escribe con "#" seguido del nombre del identificador. A diferencia del selector de clase, un ID es único y solo puede asignarse a un elemento dentro de la página, lo que permite seleccionarlo y aplicarle estilos específicos de forma exclusiva. *Ejemplo* Se dan 2 tipo de ID, "titulo-principal" y "parrafo-destacado", cada uno con sus especificaciones.
 ~~~ css
    #titulo-principal {
@@ -92,7 +93,7 @@ El selector de ID en CSS se escribe con "#" seguido del nombre del identificador
   padding: 10px;
 }
 ~~~
-- ## *Selector universal*
+- #### *Selector universal*
 Se indica con un asterisco (\*). Selecciona todo el contenido del documento. *Ejemplo*
 ~~~ css
  * {
@@ -102,7 +103,7 @@ Se indica con un asterisco (\*). Selecciona todo el contenido del documento. *Ej
 color: greenyellow;
 }
 ~~~
-- ## *Selector de atributo*
+- #### *Selector de atributo*
 Selecciona elementos que tienen un atributo específico, con la opción de filtrar por valor. *Ejemplo*
 ~~~ css
 /* Todos los enlaces que terminan en .pdf */
@@ -116,7 +117,7 @@ a[href^="https"] {
  color: green;
 }
 ~~~
-## 1\.2 Selectores compuestos
+### 1\.1\.2 Selectores compuestos
 Los selectores compuestos en CSS surgen de la combinación de dos o más selectores simples que se aplican sobre un mismo elemento. Según Haverbeke (2018) , estos selectores permiten aumentar la especificidad.
 
 Según W3C (2018) y Grant (2017), los selectores compuestos pueden tomar varias formas:
@@ -160,13 +161,13 @@ input[type="text"][required] {
   padding: 5px 10px;
 }
 ~~~
-## 1\.3 Especificidad
+### 1\.1\.3 Especificidad
 La especificidad es el algoritmo que utiliza el navegador para decidir qué valor de propiedad se aplica a un elemento. La especificidad se basa únicamente en las reglas de coincidencia, compuestas por diferentes tipos de selectores CSS (MDN Web Docs, 2024). Es decir, la especificidad es un cálculo que determina qué estilo se aplica cuando varias reglas coinciden sobre el  mismo elemento.
-## 1\.3.1 Jerarquía de especificidad
+#### 1\.1\.3\.1 Jerarquía de especificidad
 Los estilos en línea tienen la mayor especificidad. Además, los ID son más específicos que las clases, los atributos y las pseudoclases, que a su vez son más específicos que los elementos y los pseudoelementos (FreeCodeCamp, 2021).
 
 ![Orden de especificidad](https://cms-assets.tutsplus.com/uploads/users/30/posts/34141/image/spec-02.svg "Orden de especificidad")[](https://cms-assets.tutsplus.com/uploads/users/30/posts/34141/image/spec-02.svg "Orden de especificidad")
-## 1\.3.2 Cómo se calcula
+#### 1\.1\.3\.2 Cómo se calcula
 La especificidad se calcula como un valor de cuatro partes (a, b, c, d). Los estilos en línea contribuyen a A, los ID a B, las clases/atributos/pseudoclases a C, y los nombres de elementos/pseudoelementos a D (GeeksforGeeks, 2022).
 
 - Ejemplo
@@ -188,11 +189,11 @@ p {
   color: red;
 }
 ~~~
-## 1\.3.3 Importancia
+#### 1\.1\.3\.3 Importancia
 En (Web Docs, 2024) menciona que comprender la especificidad es crucial para dominar CSS, ya que permite a los desarrolladores predecir cómo los cambios en la hoja de estilo afectarán la representación final de la página.
-## 2\. Propiedades de texto y fuentes
+## 1\.2 Propiedades de texto y fuentes
 Las propiedades de texto y tipografía en CSS permiten controlar la presentación, legibilidad y estética del contenido web.
-## 2\.1 Propiedades de texto
+### 1\.2\.1 Propiedades de texto
 Las propiedades de texto en CSS abarcan la manipulación de alineación, espaciado, decoración y transformación.
 
 - color: define el color del texto, esencial para el contraste y accesibilidad.
@@ -221,7 +222,7 @@ Las propiedades de texto en CSS abarcan la manipulación de alineación, espacia
   color: #555;            
 }
 ~~~
-## 2\.2 Propiedades de fuentes
+### 1\.2\.2 Propiedades de fuentes
 Las propiedades de fuente determinan la tipografía, el tamaño, el grosor y el estilo del texto.
 
 - font-family: establece la tipografía; puede usar fuentes genéricas (serif, sans-serif, monospace) o personalizadas.
@@ -247,7 +248,7 @@ Las propiedades de fuente determinan la tipografía, el tamaño, el grosor y el 
 }
 ~~~
 # 2\. ESTRUCTURA Y DISEÑO
-# 2\.1. Modelo de Cajas
+## 2\.1 Modelo de Cajas
 El modelo de cajas es la forma en como el navegador interpreta y organiza todos los elementos de HTML. Segun Eguiluz Javier (2008) "Las cajas de una página se crean automáticamente. Cada vez que se inserta una etiqueta HTML, se crea una nueva caja rectangular que encierra los contenidos de ese elemento." Todo el contenido que presenta una pagina web viene a estar representado mediante cajas rectangulares. La siguiente imagen muestra dos cajas que se crearon a travez de etiquetas de HTML:
 
 ![FUENTE: programacionweb1.wordpress* ](https://programacionweb1.wordpress.com/wp-content/uploads/2015/04/ima1.jpg)
@@ -256,7 +257,7 @@ El modelo de cajas es la forma en como el navegador interpreta y organiza todos 
 
 Si las caracteristcas de una caja se encuentran por default en una pagina web, estas no seran vistas por el usuario porque no posee ningun fondo ni borde. Segun Mozzila (2025) "De forma predeterminada, los elementos dentro de una caja se presentan en flujionormal lo que significa que se comportan como otros elementos". La siguiente imagen muestra la pagina web uncp.edu.pe despues de forzar que todas sus cajas tengan borde.
 
-[enter link description here](imagenes/imagen03.jpg)
+[enter link description here](imagen03.jpg)
 
 *FUENTE: Captura de pantalla de la pagina uncp.edu.pe*
 
@@ -274,7 +275,7 @@ Segun Eguiluz Javier (2008) la caja presenta 6 partes, las cuales son las siguie
 - **Imagen de fondo (background image):** Imagen que se muestra por detrás del contenido y el espacio de relleno.
 - **Color de fondo (background color):** Color que se muestra por detrás del contenido y el espacio de relleno.
 - **Margen (margin):** Espacio libre entre la caja y las posibles cajas adyacentes.
-## 2\.1.1. Ancho y Altura
+### 2\.1\.1 Ancho y Altura
 ![enter image description here](https://media.geeksforgeeks.org/wp-content/uploads/abc-2.png)
 
 *FUENTE: GeeksforGeeks-org*
@@ -301,7 +302,7 @@ La propiedad CSS que controla la altura de los elementos se denomina height.
     <div id="cabecera"> ... </div>
 
     #cabecera { height: 60px; }
-## 2\.1.2. Partes principales
+### 2\.1\.2 Partes principales
 Entre las partes mas resaltantes del modelo de caja W3Schools (2025) menciona que "Existen diferentes partes del modelo de caja desde el mas interno hasta el mas externo, siendo los principales cuatro partes: contenido, relleno, bordes y márgenes."
 
 ![FUENTE: laviedegeorge.hashnode.dev](https://cdn.hashnode.com/res/hashnode/image/upload/v1585170444071/P4LgDXOoz.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp)
@@ -312,13 +313,13 @@ Entre las partes mas resaltantes del modelo de caja W3Schools (2025) menciona qu
 - **Relleno** : Limpia un área alrededor del contenido. El relleno es transparente.
 - **Borde** : un borde que rodea el relleno y el contenido.
 - **Margen** : Limpia un área fuera del borde. El margen es transparente.
-### 2\.1.2.1. Relleno
+#### 2\.1\.2\.1 Relleno
 El área de relleno , delimitada por el borde de relleno, extiende el área de contenido para incluir el relleno del elemento. El grosor del relleno está determinado por cuatro propiedades para controlar cada uno de los espacios de relleno horizontales y verticales de un elemento entre ellas son: propiedades abreviadas padding-top, padding-right, padding-bottom, padding-left y padding.
 
 ![FUENTE:contenidos.sucerman.com](https://contenidos.sucerman.com/nivel3/web2/unidad3/img/margenes.gif)
 
 *FUENTE:contenidos.sucerman.com*
-### 2\.1.2.2. Borde
+#### 2\.1\.2\.2 Borde
 CSS permite definir el aspecto de cada uno de los cuatro bordes horizontales y verticales de los elementos. Para cada borde se puede establecer su anchura, su color y su estilo. Si se quiere establecer la misma anchura a todos los bordes, CSS permite la utilización de un atajo mediante una propiedad de tipo "shorthand", que permiten indicar varias propiedades de forma resumida: La propiedad border-width permite indicar entre uno y cuatro valores. El significado de cada caso es el habitual de las propiedades "shorthand":
 
     p { border-width: thin } 
@@ -333,7 +334,7 @@ CSS permite definir el aspecto de cada uno de los cuatro bordes horizontales y v
 - Si se indican dos valores, el primero se aplica al borde superior e inferior y el segundo valor se aplica al borde izquierdo y derecho.
 - Si se indican tres valores, el primero se aplica al borde superior, el segundo se aplica al borde izquierdo y derecho y el tercer valor se aplica al borde inferior.
 - Si se indican los cuatro valores, el orden de aplicación es superior, derecho, inferior e izquierdo.
-### 2\.1.2.3. Margen
+#### 2\.1\.2\.3 Margen
 En el modelo de caja CSS, el margen (margin)  es un espacio transparente e invisible que se encuentra fuera del borde de un elemento y sirve para separarlo de otros elementos cercanos en la página. Se puede definir con valores positivos o negativos (para superponer elementos), y se controla usando la propiedad  margin, o de forma individual con margin-top, margin-right, margin-bottom y  margin-left.
 
 ![FUENTE: Ventics.com](https://ventics.com/wp-content/uploads/2011/02/f0405.gif)
@@ -357,7 +358,7 @@ De la misma forma, si un elemento está contenido dentro de otro elemento, sus m
 ![FUENTE: tutorial.bernatcortina.cat](https://tutorial.bernatcortina.cat/wp-content/uploads/2019/01/1-84.png)
 
 *FUENTE: tutorial.bernatcortina.cat*
-## 2\.2. Fondo
+## 2\.2 Fondo
 El último elemento que forma el box model es el fondo de la caja del elemento. El fondo puede ser un color simple o una imagen. El fondo solamente se visualiza en el área ocupada por el contenido y su relleno, ya que el color de los bordes se controla directamente desde los bordes y las zonas de los márgenes siempre son transparentes. Para establecer un color o imagen de fondo en la página entera, se debe establecer un fondo al elemento <body>. Si se establece un fondo a la página, como el valor inicial del fondo de los elementos es transparente, todos los elementos de la página se visualizan con el mismo fondo a menos que algún elemento especifique su propio fondo.
 
 |background-color|color de fondo|
@@ -392,7 +393,7 @@ Si la imagen que se quiere mostrar es demasiado grande para el fondo del element
 
 **Imagen original**
 
-![Texto alternativo](Imagenes/images.png)
+![Texto alternativo](images.png)
 
 **Reglas CSS:**
 
@@ -403,7 +404,7 @@ Si la imagen que se quiere mostrar es demasiado grande para el fondo del element
         }
 **Resultado:**
 
-![Texto alternativo](Imagenes/imagen02.jpg)
+![Texto alternativo](imagen02.jpg)
 
 Con una imagen muy pequeña (y que por tanto, se puede descargar en muy poco tiempo) se consigue cubrir completamente el fondo de la página, con lo que se consigue un gran ahorro de ancho de banda. En ocasiones, no es conveniente que la imagen de fondo se repita horizontal y verticalmente. Para ello, CSS introduce la propiedad background-repeat que permite controlar la forma de repetición de las imágenes de fondo.
 
@@ -417,7 +418,7 @@ Con una imagen muy pequeña (y que por tanto, se puede descargar en muy poco tie
 - El valor no-repeat muestra una sola vez la imagen y no se repite en ninguna dirección.
 - El valor repeat-x repite la imagen sólo horizontalmente.
 - El valor repeat-y repite la imagen solamente de forma vertical.
-## 2\.3. Colores
+## 2\.3 Colores
 En el contexto del diseño web, el color es un atributo de estilo que se aplica a los elementos HTML para mejorar la apariencia, la legibilidad y la experiencia del usuario. Por ejemplo, puedes aplicar un color de fondo a un elemento div y cambiar el color del texto dentro de ese div:
 ~~~
 div {
@@ -444,7 +445,7 @@ Oregoom.com (2025) menciona que Existen varios sistemas de colores que se pueden
 ~~~
   color: #0000FF;
 ~~~
-## 2\.3.1. Opacidad y transparencia en colores
+### 2\.3\.1. Opacidad y transparencia en colores
 La opacidad y la transparencia son propiedades que permiten controlar la cantidad de luz que pasa a través de un elemento.
 
 En CSS3, se pueden especificar colores con opacidad variable utilizando las versiones “A” de los modelos de color RGB y HSL (RGBA y HSLA, respectivamente), donde la “A” representa la opacidad (alfa).
@@ -471,7 +472,7 @@ div {
 ~~~
 
 En este caso, tanto el color de fondo como el texto dentro del div tendrán una opacidad del 50%.
-## 2\.3.2. Especificación de colores en CSS3
+### 2\.3\.2. Especificación de colores en CSS3
 En CSS, hay varias formas de especificar colores para diferentes propiedades. A continuación, exploraremos las diferentes formas de especificar colores y proporcionaremos ejemplos prácticos.
 
 **Colores predefinidos y nombres de colores** CSS3 incluye un conjunto de colores predefinidos a los que se puede hacer referencia mediante nombres. Por ejemplo:
@@ -482,397 +483,270 @@ p {
 ~~~
 
 En este ejemplo, el texto de los párrafos se mostrará en rojo.
-## REFERENCIAS
-- https://www.jesusda.com/docs/ebooks/introduccion\_css.pdf
-- https://ventics.com/margen-y-relleno-en-css/
-- https://www-w3schools-com.translate.goog/css/css\_boxmodel.asp?\_x\_tr\_sl=en&\_x\_tr\_tl=es&\_x\_tr\_hl=es&\_x\_tr\_pto=tc
-- https://laviedegeorge.hashnode.dev/the-theory-of-the-box-model-margin-and-padding-explained-ck88j5cgx00067rs1g4b1b6v5
-- https://developer-mozilla-org.translate.goog/en-US/docs/Web/CSS/CSS\_box\_model/Introduction\_to\_the\_CSS\_box\_model?\_x\_tr\_sl=en&\_x\_tr\_tl=es&\_x\_tr\_hl=es&\_x\_tr\_pto=sge#:~:text=Every%20box%20is%20composed%20of,border%20edge%2C%20and%20margin%20edge.
-- https://oregoom.com/css/color/
-1. **Medidas y posicionamiento**
-   1. **Unidades de medida**
 
-      En CSS, las unidades de medida son esenciales para definir el tamaño y la disposición de los elementos. Las unidades más comunes incluyen píxeles (px), porcentajes (%), em, rem, vw, y vh. Cada una tiene sus aplicaciones y se utiliza en función del contexto en el que se desee lograr la flexibilidad y accesibilidad de la interfaz (MDN Web Docs, s.f.).
+# 3\. Medidas y posicionamiento
+## 3\.1 Unidades de medida
+En CSS, las unidades de medida son esenciales para definir el tamaño y la disposición de los elementos. Las unidades más comunes incluyen píxeles (px), porcentajes (%), em, rem, vw, y vh. Cada una tiene sus aplicaciones y se utiliza en función del contexto en el que se desee lograr la flexibilidad y accesibilidad de la interfaz (MDN Web Docs, s.f.). Para definir el tamaño de un elemento en CSS, es necesario tener en cuenta los diferentes tipos de medidas disponibles. Estas se dividen en dos categorías:
+### 3\.1\.1 Medidas absolutas: 
+Son aquellas que permanecen constantes y no varían en ningún momento. 
 
-      Para definir el tamaño de un elemento en CSS, es necesario tener en cuenta los diferentes tipos de medidas disponibles. Estas se dividen en dos categorías:
-      1. **Medidas absolutas:** Son aquellas que permanecen constantes y no varían en ningún momento.
+![Fuente: MDN Web Docs, "Unidades y valores en CSS"](1.png)
+*Fuente: MDN Web Docs, "Unidades y valores en CSS"*
 
-         ![](Aspose.Words.845d4b2f-e85a-4060-b4b9-d32f0e7acc5d.001.png)
+La mayoría de estos valores resultan ser más prácticos cuando se aplican a una salida en formato impreso en lugar de en la pantalla. Un ejemplo de esto es que, por lo general, no se utilizan centímetros (cm) para la visualización en pantalla. El valor que más se emplea de manera habitual es el de los píxeles (px).
 
-         **Fuente:** MDN Web Docs, "Unidades y valores en CSS"
+**Ejemplo:**
 
-         La mayoría de estos valores resultan ser más prácticos cuando se aplican a una salida en formato impreso en lugar de en la pantalla. Un ejemplo de esto es que, por lo general, no se utilizan centímetros (cm) para la visualización en pantalla. El valor que más se emplea de manera habitual es el de los píxeles (px).
-
-         **Ejemplo:**
 - **HTML:**
-
-  <html lang=es>
-
-  <head>
-
-  `    `<meta charset=UTF-8>
-
-  `    `<meta content=width=device-width, initial-scale=1.0 name=viewport>
-
-  `    `<title>Ejemplo de Medidas Absolutas en CSS</title>
-
-  `    `<link href=Ejemplo1.css rel=stylesheet>
-
-  </head>
-
-  <body>
-
-  `    `<div class=container>
-  # Uso de Medidas Absolutas en CSS
-  `            `Este ejemplo utiliza diferentes medidas absolutas en CSS para demostrar cómo afectan al diseño de una página web.
-
-  `            `Observa que algunas medidas están relacionadas con el tamaño físico y no se adaptan a la resolución de la pantalla.
-
-  `        `<a href=#>Enlace de ejemplo</a>
-
-  `        `<div class=box>
-
-  Caja en milímetros
-
-  `        `</div>
-
-  `    `</div>
-
-  </body>
-
-  </html>
+  ```
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplo de Medidas Absolutas en CSS</title>
+        <link rel="stylesheet" href="Ejemplo1.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Uso de Medidas Absolutas en CSS</h1>
+            <p>
+                Este ejemplo utiliza diferentes medidas absolutas en CSS para demostrar cómo afectan al diseño de una página web. 
+                Observa que algunas medidas están relacionadas con el tamaño físico y no se adaptan a la resolución de la pantalla.
+            </p>
+            <a href="#">Enlace de ejemplo</a>
+            
+            <div class="box">
+                <p>Caja en milímetros</p>
+            </div>
+        </div>
+    </body>
+    </html>
+   ```
 - **CSS:**
+   ```
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
 
-body {
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        background-color: white;
+        padding: 30px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-`    `font-family: Arial, sans-serif;
+    /* Título con tamaño en píxeles */
+    h1 {
+        font-size: 35px; /* Medida absoluta en píxeles */
+        color: #333;
+    }
 
-`    `margin: 0;
+    /* Párrafo con tamaño en centímetros */
+    p {
+        font-size: 1cm; /* Medida absoluta en centímetros */
+        color: #555;
+        line-height: 1.6;
+    }
 
-`    `padding: 0;
+    /* Un enlace con tamaño en puntos */
+    a {
+        font-size: 12pt; /* Medida absoluta en puntos */
+        color: #007BFF;
+        text-decoration: none;
+    }
 
-`    `background-color: #f0f0f0;
+    /* Un div con tamaño en milímetros */
+    .box {
+        width: 100mm; /* Medida absoluta en milímetros */
+        height: 50mm; /* Medida absoluta en milímetros */
+        background-color: #4CAF50;
+        margin-top: 20px;
+    }
 
-}
+    .box p {
+        font-size: 2mm; /* Medida absoluta en milímetros */
+        text-align: center;
+        line-height: 50mm;
+        color: white;
+    }
 
-.container {
+   ```
+- **Resultado:**
+![fIGURA2](2.png)
 
-`    `width: 80%;
+### 3\.1\.2 Medidas relativas:
+Son aquellas que dependen de otros elementos y, por lo tanto, pueden cambiar según las circunstancias, por ejemplo: al tamaño de letra del elemento principal o al tamaño de la ventana gráfica. La ventaja de usar unidades relativas es que con una planificación cuidadosa puedes lograr que el tamaño del texto u otros elementos escalen en relación con todo lo demás en la página. En la tabla siguiente se enumeran algunas de las unidades más útiles para el desarrollo web.
+![Fuente: MDN Web Docs, "Unidades y valores en CSS"](3.png)
+*Fuente: MDN Web Docs, "Unidades y valores en CSS"*
 
-`    `margin: 20px auto;
+**Ejemplo:**
 
-`    `background-color: white;
+- **HTML:**
+  ```
+  <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplo de Medidas Relativas en CSS</title>
+        <link rel="stylesheet" href="Ejemplo2.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Título con Medidas Relativas</h1>
+            <p>
+                Este ejemplo usa medidas relativas para crear un diseño que se adapta a diferentes tamaños de pantalla.
+            </p>
+            <div class="box">
+                <p>Caja con porcentaje de ancho</p>
+            </div>
+            <div class="responsive-box">
+                <p>Caja con medidas en viewport</p>
+            </div>
+        </div>
+    </body>
+    </html>
 
-`    `padding: 30px;
+  ```
+  
+- **CSS:**
+  ```
+    /* Estilo general del cuerpo */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
 
-`    `box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Contenedor principal */
+    .container {
+        width: 80%; /* 80% del ancho de la pantalla */
+        margin: 20px auto;
+        background-color: white;
+        padding: 30px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-}
+    /* Título con tamaño relativo en rem */
+    h1 {
+        font-size: 2rem; /* 2 veces el tamaño de la fuente base (16px por defecto) */
+        color: #333;
+    }
 
-/\* Título con tamaño en píxeles \*/
+    /* Párrafo con tamaño relativo en em */
+    p {
+        font-size: 1.2em; /* 1.2 veces el tamaño de fuente del elemento padre */
+        color: #555;
+        line-height: 1.5;
+    }
 
-h1 {
+    /* Caja con tamaño en porcentaje (relativo al contenedor) */
+    .box {
+        width: 50%; /* 50% del ancho de su contenedor */
+        background-color: #4CAF50;
+        margin-top: 20px;
+        padding: 20px;
+        color: white;
+        text-align: center;
+    }
 
-`    `font-size: 35px; /\* Medida absoluta en píxeles \*/
+    /* Caja que usa medidas de viewport (relativas a la ventana del navegador) */
+    .responsive-box {
+        width: 60vw; /* 60% del ancho de la ventana del navegador */
+        height: 30vh; /* 30% de la altura de la ventana del navegador */
+        background-color: #2196F3;
+        margin-top: 20px;
+        color: white;
+        text-align: center;
+    }
 
-`    `color: #333;
-
-}
-
-/\* Párrafo con tamaño en centímetros \*/
-
-p {
-
-`    `font-size: 1cm; /\* Medida absoluta en centímetros \*/
-
-`    `color: #555;
-
-`    `line-height: 1.6;
-
-}
-
-/\* Un enlace con tamaño en puntos \*/
-
-a {
-
-`    `font-size: 12pt; /\* Medida absoluta en puntos \*/
-
-`    `color: #007BFF;
-
-`    `text-decoration: none;
-
-}
-
-/\* Un div con tamaño en milímetros \*/
-
-.box {
-
-`    `width: 100mm; /\* Medida absoluta en milímetros \*/
-
-`    `height: 50mm; /\* Medida absoluta en milímetros \*/
-
-`    `background-color: #4CAF50;
-
-`    `margin-top: 20px;
-
-}
-
-.box p {
-
-`    `font-size: 2mm; /\* Medida absoluta en milímetros \*/
-
-`    `text-align: center;
-
-`    `line-height: 50mm;
-
-`    `color: white;
-
-}
+  ```
 
 - **Resultado:**
+  
+  ![fIGURA4](4.png)
 
-![](Aspose.Words.845d4b2f-e85a-4060-b4b9-d32f0e7acc5d.002.png)
+## 3\.2. Posicionamiento
+El posicionamiento en CSS permite colocar un elemento de manera específica dentro de su contenedor utilizando distintas técnicas como el posicionamiento estático, relativo, absoluto o fijo (MDN Web Docs, 2024). 
 
-1. **Medidas relativas:** Son aquellas que dependen de otros elementos y, por lo tanto, pueden cambiar según las circunstancias, por ejemplo: al tamaño de letra del elemento principal o al tamaño de la ventana gráfica. La ventaja de usar unidades relativas es que con una planificación cuidadosa puedes lograr que el tamaño del texto u otros elementos escalen en relación con todo lo demás en la página. En la tabla siguiente se enumeran algunas de las unidades más útiles para el desarrollo web.
+Existen diversas propiedades que permiten modificar la ubicación de los elementos en HTML. Algunas de estas son:
 
-   ![](Aspose.Words.845d4b2f-e85a-4060-b4b9-d32f0e7acc5d.003.png)
-
-   **Fuente:** *MDN Web Docs, "Unidades y valores en CSS"*
-
-   **Ejemplo:**
-- **HTML:**
-
-  <html lang=es>
-
-  <head>
-
-  `    `<meta charset=UTF-8>
-
-  `    `<meta content=width=device-width, initial-scale=1.0 name=viewport>
-
-  `    `<title>Ejemplo de Medidas Relativas en CSS</title>
-
-  `    `<link href=Ejemplo2.css rel=stylesheet>
-
-  </head>
-
-  <body>
-
-  `    `<div class=container>
-  # Título con Medidas Relativas
-  `            `Este ejemplo usa medidas relativas para crear un diseño que se adapta a diferentes tamaños de pantalla.
-
-  `        `<div class=box>
-
-  Caja con porcentaje de ancho
-
-  `        `</div>
-
-  `        `<div class=responsive-box>
-
-  Caja con medidas en viewport
-
-  `        `</div>
-
-  `    `</div>
-
-  </body>
-
-  </html>
-- **CSS**
-
-  /\* Estilo general del cuerpo \*/
-
-  body {
-
-  `    `font-family: Arial, sans-serif;
-
-  `    `margin: 0;
-
-  `    `padding: 0;
-
-  `    `background-color: #f0f0f0;
-
-  }
-
-  /\* Contenedor principal \*/
-
-  .container {
-
-  `    `width: 80%; /\* 80% del ancho de la pantalla \*/
-
-  `    `margin: 20px auto;
-
-  `    `background-color: white;
-
-  `    `padding: 30px;
-
-  `    `box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-
-  }
-
-  /\* Título con tamaño relativo en rem \*/
-
-  h1 {
-
-  `    `font-size: 2rem; /\* 2 veces el tamaño de la fuente base (16px por defecto) \*/
-
-  `    `color: #333;
-
-  }
-
-  /\* Párrafo con tamaño relativo en em \*/
-
-  p {
-
-  `    `font-size: 1.2em; /\* 1.2 veces el tamaño de fuente del elemento padre \*/
-
-  `    `color: #555;
-
-  `    `line-height: 1.5;
-
-  }
-
-  /\* Caja con tamaño en porcentaje (relativo al contenedor) \*/
-
-  .box {
-
-  `    `width: 50%; /\* 50% del ancho de su contenedor \*/
-
-  `    `background-color: #4CAF50;
-
-  `    `margin-top: 20px;
-
-  `    `padding: 20px;
-
-  `    `color: white;
-
-  `    `text-align: center;
-
-  }
-
-  /\* Caja que usa medidas de viewport (relativas a la ventana del navegador) \*/
-
-  .responsive-box {
-
-  `    `width: 60vw; /\* 60% del ancho de la ventana del navegador \*/
-
-  `    `height: 30vh; /\* 30% de la altura de la ventana del navegador \*/
-
-  `    `background-color: #2196F3;
-
-  `    `margin-top: 20px;
-
-  `    `color: white;
-
-  `    `text-align: center;
-
-  }
-- **Resultado**
-
-![](Aspose.Words.845d4b2f-e85a-4060-b4b9-d32f0e7acc5d.004.png)
-
-1. **Posicionamiento**
-
-   El posicionamiento en CSS permite colocar un elemento de manera específica dentro de su contenedor utilizando distintas técnicas como el posicionamiento estático, relativo, absoluto o fijo (MDN Web Docs, 2024).
-
-   Existen diversas propiedades que permiten modificar la ubicación de los elementos en HTML. Algunas de estas son:
 - Static: El elemento permanece en su lugar inicial, y esta es la propiedad predeterminada.
 - Absolute: La ubicación del elemento deja de depender del flujo normal de la página, lo que permite que se superponga a otros elementos. Los demás componentes ocuparán el espacio dejado por el elemento con posición absoluta.
 - Relative: El elemento se posiciona en relación con su ubicación original, lo que hace que se superponga a otros elementos, aunque no se encuentre en esa posición. Los demás elementos mantienen su ubicación original.
 - Fixed: El elemento mantiene su posición fija, sin importar el desplazamiento de la página al hacer scroll.
 - Sticky: El elemento se mantiene fijo en su posición cuando el usuario lo encuentra al hacer scroll, pero solo dentro de su contenedor.
-
-  ![](Aspose.Words.845d4b2f-e85a-4060-b4b9-d32f0e7acc5d.005.png)
-
-  **Fuente:** Ceper. (2022). *Manual de HTML y CSS*. Universidad de los Andes.
+  
+![fIGURA4](5.png)
+*Fuente: Ceper. (2022). Manual de HTML y CSS. Universidad de los Andes.*
 
 **Ejemplo:**
 
 - **HTML:**
+  ```
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplo de Posicionamiento en CSS</title>
+        <link rel="stylesheet" href="Ejemplo3.css"> <!-- Enlaza con el archivo CSS -->
+    </head>
+    <body>
+        <div class="box" id="one">One</div>
+        <div class="box" id="two">Two</div>
+        <div class="box" id="three">Three</div>
+        <div class="box" id="four">Four</div>
+    </body>
+    </html> <!-- Cierra la etiqueta html correctamente -->
 
-  <html lang=es>
 
-  <head>
+  ```
+- **CSS:**
+  ```
+    /* Establece que el modelo de caja incluye los bordes y el relleno dentro del tamaño total */
+    * {
+    box-sizing: border-box;
+    }
 
-  `    `<meta charset=UTF-8>
+    /* Estilos generales para las cajas */
+    .box {
+    display: inline-block; /* Los elementos estarán en una fila */
+    width: 100px;
+    height: 100px;
+    background: rgb(43, 255, 0);
+    color: white;
+    text-align: center;
+    line-height: 100px; /* Centra el texto verticalmente */
+    margin: 10px;
+    }
 
-  `    `<meta content=width=device-width, initial-scale=1.0 name=viewport>
+    /* Posicionamiento absoluto para el segundo elemento */
+    #two {
+    position: absolute;
+    top: 20px; /* 20px desde la parte superior */
+    left: 20px; /* 20px desde la izquierda */
+    background: blue;
+    }
+  ```
+- **Resultado:**
+  ![fIGURA4](6.png)
 
-  `    `<title>Ejemplo de Posicionamiento en CSS</title>
-
-  `    `<link href=Ejemplo3.css rel=stylesheet>
-
-  </head>
-
-  <body>
-
-  `    `<div class=box id=one>One</div>
-
-  `    `<div class=box id=two>Two</div>
-
-  `    `<div class=box id=three>Three</div>
-
-  `    `<div class=box id=four>Four</div>
-
-  </body>
-
-  </html>
-- **CSS**
-
-  /\* Establece que el modelo de caja incluye los bordes y el relleno dentro del tamaño total \*/
-
-  \* {
-
-  `  `box-sizing: border-box;
-
-  }
-
-  /\* Estilos generales para las cajas \*/
-
-  .box {
-
-  `  `display: inline-block; /\* Los elementos estarán en una fila \*/
-
-  `  `width: 100px;
-
-  `  `height: 100px;
-
-  `  `background: rgb(43, 255, 0);
-
-  `  `color: white;
-
-  `  `text-align: center;
-
-  `  `line-height: 100px; /\* Centra el texto verticalmente \*/
-
-  `  `margin: 10px;
-
-  }
-
-  /\* Posicionamiento absoluto para el segundo elemento \*/
-
-  #two {
-
-  `  `position: absolute;
-
-  `  `top: 20px; /\* 20px desde la parte superior \*/
-
-  `  `left: 20px; /\* 20px desde la izquierda \*/
-
-  `  `background: blue;
-
-  }
-- **Resultado**
-
-  ![](Aspose.Words.845d4b2f-e85a-4060-b4b9-d32f0e7acc5d.006.png)
-# 7\. Flexbox Avanzado
-## 7\.1 Fundamentos Conceptuales desde una Perspectiva Teórica
+# 4\.LAYOUT AVANZADO
+## 4\.1 Flexbox Avanzado
+### 4\.1\.1 Fundamentos Conceptuales desde una Perspectiva Teórica
 Flexbox (Flexible Box Layout) representa un paradigma de diseño CSS que permite crear layouts flexibles y eficientes, proporcionando una metodología sistemática para la distribución del espacio y la alineación de elementos, incluso cuando sus dimensiones son variables o desconocidas (W3C, 2017). Este modelo de diseño encuentra una correspondencia teórica con los principios establecidos por Maslow (1943), quien argumenta que "las necesidades más básicas tienen una mayor 'prepotencia', lo que significa que su influencia como motivadores es más fuerte hasta que son, al menos, parcialmente satisfechas" (p. 375).
 
 En el contexto del diseño web, esta prepotencia se manifiesta en la necesidad de establecer primero una estructura funcional básica antes de implementar características estéticas avanzadas. Como señala Maslow (1943), "cualquier comportamiento tiende a ser determinado por varias o todas las necesidades básicas simultáneamente, más que por una sola" (p. 394), principio que encuentra aplicación directa en la implementación multicapa de propiedades Flexbox.
-## 7\.2 Arquitectura del Sistema Flexbox
-### 7\.2.1 Contenedor Flex y la Jerarquía de Control
+
+### 4\.1\.2 Arquitectura del Sistema Flexbox
+#### 4\.1\.2\.1 Contenedor Flex y la Jerarquía de Control
 El contenedor flex, activado mediante `display: flex` o `display: inline-flex`, establece lo que Maslow (1943) denominaría el nivel de "necesidades fisiológicas" en el diseño web: la capacidad fundamental de organizar contenido. Esta base estructural debe implementarse primero, ya que "sin ellas, es prácticamente imposible concentrarse en cualquier otra cosa" (Maslow, 1943, p. 373).
 ~~~ css
 /* Implementación jerárquica: Nivel base */
@@ -890,7 +764,7 @@ La propiedad `flex-direction` define la orientación del eje principal, establec
   /* Establece predictibilidad direccional */
 }
 ~~~
-### 7\.2.2 Propiedades de Alineación: Satisfaciendo Necesidades de Orden
+#### 4\.1\.2\.2 Propiedades de Alineación: Satisfaciendo Necesidades de Orden
 Las propiedades `justify-content` y `align-items` representan el segundo nivel en la jerarquía de implementación, correspondiente a las necesidades de seguridad de Maslow. Estas propiedades crean sistemas de alineación consistentes que reducen la incertidumbre visual del usuario:
 ~~~ css
 .aligned-container {
@@ -910,7 +784,7 @@ Como establece Maslow (1943), una vez satisfechas las necesidades básicas, "la 
   /* Manejo complejo de contenido multi-línea */
 }
 ~~~
-### 7\.2.3 Propiedades de los Items Flex: Individualización y Crecimiento
+#### 4\.1\.2\.3 Propiedades de los Items Flex: Individualización y Crecimiento
 Las propiedades aplicadas a los elementos flex individuales (`flex-grow`, `flex-shrink`, `flex-basis`) representan lo que Maslow (1943) conceptualiza como el nivel de "necesidades de crecimiento o B-need" (p. 395). Estas propiedades permiten que cada elemento alcance su potencial óptimo dentro del contenedor:
 ~~~ css
 .growing-item {
@@ -931,7 +805,7 @@ La propiedad `align-self` permite la "autorrealización" individual de elementos
   align-self: flex-end; /* Alineación individual independiente del container */
 }
 ~~~
-## 7\.3 Implementación Práctica: Layout de Tarjetas Responsivas
+### 4\.1\.3 Implementación Práctica: Layout de Tarjetas Responsivas
 La siguiente implementación demuestra la aplicación jerárquica de principios, comenzando con funcionalidad básica y progresando hacia características avanzadas:
 ~~~ css
 /* Nivel 1: Funcionalidad básica (Necesidades fisiológicas) */
@@ -979,13 +853,14 @@ La siguiente implementación demuestra la aplicación jerárquica de principios,
 ~~~
 
 -----
-# 8\. Diseño Responsivo
-## 8\.1 Marco Teórico del Diseño Adaptativo
+## 4\.2 Diseño Responsivo
+### 4\.2\.1 Marco Teórico del Diseño Adaptativo
 El diseño responsivo constituye una metodología de desarrollo web que permite la adaptación automática de interfaces a diferentes dispositivos y tamaños de pantalla, proporcionando experiencias de usuario optimizadas (Marcotte, 2010). Esta aproximación encuentra resonancia teórica en el concepto de flexibilidad propuesto por Maslow (1943), quien observa que "el orden de las necesidades puede ser flexible y variar según las circunstancias externas o las diferencias individuales" (p. 378).
 
 La implementación de diseño responsivo refleja directamente la comprensión de Maslow sobre la naturaleza dinámica de las necesidades humanas, donde "las personas pueden fluctuar entre los niveles de la jerarquía" (Maslow, 1943, p. 379) dependiendo del contexto. En el diseño web, este contexto está determinado por las capacidades y limitaciones del dispositivo utilizado.
-## 8\.2 Media Queries: Implementación Condicional de Necesidades
-### 8\.2.1 Fundamentos de las Media Queries
+
+### 4\.2\.2 Media Queries: Implementación Condicional de Necesidades
+#### 4\.2\.2\.1 Fundamentos de las Media Queries
 Las Media Queries funcionan como mecanismos condicionales que aplican estilos específicos basados en las características del dispositivo, principalmente el ancho de pantalla (W3C, 2012). Esta aproximación condicional refleja la observación de Maslow (1943) de que "eventos de la vida... pueden causar una regresión en la cual las necesidades de un nivel inferior... vuelven a convertirse en las principales motivadoras" (p. 379).
 ~~~ css
 /* Sintaxis fundamental que establece condiciones contextuales */
@@ -993,7 +868,7 @@ Las Media Queries funcionan como mecanismos condicionales que aplican estilos es
   /* Estilos que atienden necesidades básicas en contextos restrictivos */
 }
 ~~~
-### 8\.2.2 Estratificación por Capacidades de Dispositivo
+#### 4\.2\.2\.2 Estratificación por Capacidades de Dispositivo
 La implementación de breakpoints refleja la jerarquía de capacidades, donde cada nivel de pantalla permite la satisfacción de necesidades más sofisticadas:
 ~~~ css
 /* Móviles: Necesidades fisiológicas - funcionalidad esencial */
@@ -1028,8 +903,8 @@ La implementación de breakpoints refleja la jerarquía de capacidades, donde ca
   }
 }
 ~~~
-## 8\.3 Mobile-First versus Desktop-First: Perspectivas Jerárquicas
-### 8\.3.1 Mobile-First como Manifestación de Prepotencia
+### 4\.2\.3 Mobile-First versus Desktop-First: Perspectivas Jerárquicas
+#### 4\.2\.3\.1 Mobile-First como Manifestación de Prepotencia
 El enfoque Mobile-First alinea directamente con el principio fundamental de Maslow (1943) de que "las necesidades más básicas tienen una mayor prepotencia" (p. 375). Esta metodología comienza con las restricciones más severas (pantallas pequeñas, conectividad limitada, capacidades reducidas) y progresa hacia capacidades expandidas:
 ~~~ css
 /* Base Mobile-First: Fundamentos esenciales */
@@ -1066,15 +941,16 @@ El enfoque Mobile-First alinea directamente con el principio fundamental de Masl
 ~~~
 
 Como argumenta Maslow (1943), "la búsqueda de la autorrealización es un proceso continuo que, en lugar de reducir la tensión, aumenta el deseo de seguir creciendo" (p. 396). En el diseño responsivo, esto se manifiesta como la expansión progresiva de capacidades conforme aumentan los recursos disponibles.
-### 8\.3.2 Ventajas del Enfoque Progressive Enhancement
+
+#### 4\.2\.3\.2 Ventajas del Enfoque Progressive Enhancement
 El Mobile-First implementa lo que Maslow denominaría "progressive enhancement" psicológico, donde cada nivel superior enriquece pero no reemplaza las funciones básicas. Las ventajas identificadas incluyen:
 
 1. **Priorización de contenido esencial**: Refleja las "necesidades de deficiencia" que deben satisfacerse primero
 1. **Optimización de rendimiento**: Carga solo recursos necesarios para cada contexto
 1. **Accesibilidad mejorada**: Garantiza funcionalidad universal antes de añadir mejoras
 1. **SEO favorable**: Los motores de búsqueda priorizan la experiencia móvil (Google, 2018)
-## 8\.4 Unidades Responsivas: Flexibilidad Adaptativa
-### 8\.4.1 Viewport Units y Relatividad Contextual
+### 4\.2\.4 Unidades Responsivas: Flexibilidad Adaptativa
+#### 4\.2\.4\.1 Viewport Units y Relatividad Contextual
 Las unidades viewport (`vw`, `vh`, `vmin`, `vmax`) permiten diseños que responden dinámicamente al contexto de visualización, implementando lo que Maslow (1943) describe como adaptabilidad situacional:
 ~~~ css
 .adaptive-hero {
@@ -1089,7 +965,7 @@ Las unidades viewport (`vw`, `vh`, `vmin`, `vmax`) permiten diseños que respond
   /* Escalado inteligente con límites mínimos y máximos */
 }
 ~~~
-### 8\.4.2 REM y EM: Sistemas de Escalado Jerárquico
+#### 4\.2\.4\.2 REM y EM: Sistemas de Escalado Jerárquico
 La utilización de unidades relativas (`rem`, `em`) establece sistemas de escalado que reflejan la naturaleza jerárquica de las necesidades:
 ~~~ css
 /* Establecimiento de base fundamental */
@@ -1118,7 +994,7 @@ html {
   line-height: 1.4;
 }
 ~~~
-## 8\.5 Implementación Integral: Sistema Responsivo Completo
+### 4\.2\.5 Implementación Integral: Sistema Responsivo Completo
 La siguiente implementación demuestra la aplicación completa de principios jerárquicos en un sistema responsivo:
 ~~~ css
 /* Nivel 1: Base móvil - Necesidades fisiológicas del diseño */
@@ -1195,7 +1071,8 @@ La siguiente implementación demuestra la aplicación completa de principios jer
 Este sistema integral refleja la observación de Maslow (1943) de que "la jerarquía se puede dividir en dos grandes categorías que reflejan la naturaleza de la motivación" (p. 395): las necesidades básicas de funcionalidad y estructura (niveles 1-2) y las necesidades de crecimiento representadas por interactividad y sofisticación estética (niveles 3-4).
 
 Como concluye Maslow (1943), "la verdadero poder no reside en un rígido esquema lineal, sino en su capacidad para ofrecer un punto de partida para el análisis de las motivaciones" (p. 398). De manera similar, estos principios de diseño responsivo proporcionan un framework flexible que puede adaptarse a las necesidades específicas de cada proyecto mientras mantiene una base teórica sólida para la toma de decisiones de implementación.
-## 7\.6 Ejemplo Básico de Demostración: Flexbox
+
+## 4\.3 Ejemplo Básico de Demostración: Flexbox
 ~~~ html
 <!DOCTYPE html>
 <html lang="es">
@@ -1273,7 +1150,7 @@ Como concluye Maslow (1943), "la verdadero poder no reside en un rígido esquema
 </body>
 </html>
 ~~~
-## 8\.6 Ejemplo Básico de Demostración: Diseño Responsivo
+## 4\.4 Ejemplo Básico de Demostración: Diseño Responsivo
 ~~~ html
 <!DOCTYPE html>
 <html lang="es">
@@ -1431,20 +1308,21 @@ Como concluye Maslow (1943), "la verdadero poder no reside en un rígido esquema
 Estos ejemplos demuestran prácticamente la aplicación de los principios teóricos desarrollados, implementando la progresión jerárquica desde funcionalidades básicas hasta experiencias sofisticadas, siguiendo los postulados de Maslow (1943) sobre la satisfacción progresiva de necesidades humanas en el contexto del diseño de interfaces web.
 
 -----
-# Pseudo-clases y Pseudo-elementos en CSS
-## 1\. ¿Qué son las Pseudo-clases?
+# 5\. INTERACTIVIDAD Y DETALLES FINOS
+
+## 5\.1 ¿Qué son las Pseudo-clases?
 Las **pseudo‑clases** son selectores que permiten aplicar estilos a elementos en un **estado específico**, sin necesidad de modificar el HTML directamente. Por ejemplo, se utilizan para reconocer si un elemento está siendo enfocado, su primer hijo o si el cursor pasa sobre él ([developer.mozilla.org](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements)).
 
 - Comienzan con un solo dos puntos (`:`), como en `:hover`.
 - Facilitan un marcado más limpio y mantenible, simulando la adición de una clase sin tocar el HTML .
-### Ejemplos comunes de pseudo-clases:
+### 5\.1\.2 Ejemplos comunes de pseudo-clases:
 - `:hover` → Se aplica cuando el cursor pasa por encima del elemento.
 - `:active` → Se aplica cuando el elemento está activo (ej. al hacer clic).
 - `:focus` → Se aplica cuando el elemento recibe foco (ej. un input seleccionado).
 - `:first-child` → Selecciona el primer hijo de un contenedor.
 - `:last-child` → Selecciona el último hijo de un contenedor.
 - `:nth-child(n)` → Selecciona el elemento en la posición *n* de una lista.
-### Código:
+### 5\.1\.3 Código:
 ~~~ css
 .ejemplo1 button:hover {
   background-color: blue;
@@ -1461,26 +1339,36 @@ Las **pseudo‑clases** son selectores que permiten aplicar estilos a elementos 
   <input type="text" placeholder="Escribe algo...">
 </div>
 ~~~
-### Ejemplo:
-<div class=ejemplo1> <button>Pasa el cursor</button> 
+### 5\.1\.4 Ejemplo:
+<div class="ejemplo1">
+  <button>Pasa el cursor</button>
+  <br><br>
+  <input type="text" placeholder="Escribe algo...">
+</div>
 
-` `<input placeholder=Escribe algo... type=text> </div>
-
-<style> .ejemplo1 button:hover { background-color: blue; color: white; } .ejemplo1 input:focus { border: 4px solid green; } </style>
+<style>
+.ejemplo1 button:hover {
+  background-color: blue;
+  color: white;
+}
+.ejemplo1 input:focus {
+  border: 4px solid green;
+}
+</style>
 
 -----
-## 2\. ¿Qué son los Pseudo-elementos?
+## 5\.2 ¿Qué son los Pseudo-elementos?
 Los **pseudo‑elementos** funcionan como si insertaran una parte adicional dentro de un elemento HTML, sin modificar el marcado real. Se utilizan para aplicar estilos sobre partes específicas o generar contenido visual extra ([developer.mozilla.org](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements)).
 
 - Se representan con **doble dos puntos** `::`, como `::before` o `::after` .
 - A pesar de esto, algunos navegadores todavía aceptan la sintaxis con un solo dos puntos (`:before`, `:after`) por compatibilidad retrospectiva .
-### Ejemplos comunes de pseudo-elementos:
+### 5\.2\.1 Ejemplos comunes de pseudo-elementos:
 - `::before` → Inserta contenido antes de un elemento.
 - `::after` → Inserta contenido después de un elemento.
 - `::first-letter` → Selecciona la primera letra de un texto.
 - `::first-line` → Selecciona la primera línea de un texto.
 - `::selection` → Cambia el estilo del texto seleccionado.
-### Código:
+### 5\.2\.2 Código:
 ~~~ css
 .ejemplo2 p::first-letter {
   font-size: 2em;
@@ -1499,16 +1387,30 @@ Los **pseudo‑elementos** funcionan como si insertaran una parte adicional dent
   <p>Este es un párrafo de ejemplo.</p>
 </div>
 ~~~
-### Ejemplo:
-<div class=ejemplo2> 
 
-Este es un párrafo de ejemplo.
+### 5\.2\.3 Ejemplo:
 
-` `</div>
-<style> .ejemplo2 p::first-letter { font-size: 2em; color: red; } .ejemplo2 p::after { content: " 🔥"; } .ejemplo2 p::selection { background: yellow; color: black; } </style>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## 3\. Ejemplo completo combinado
-### Código
+<div class="ejemplo2">
+  <p>Este es un párrafo de ejemplo.</p>
+</div>
+
+<style>
+.ejemplo2 p::first-letter {
+  font-size: 2em;
+  color: red;
+}
+.ejemplo2 p::after {
+  content: " 🔥";
+}
+.ejemplo2 p::selection {
+  background: yellow;
+  color: black;
+}
+</style>
+---
+
+## 5\.3 Ejemplo combinado Pseudo-clase y Pseudo-elemento
+### 5\.3\.1 Código
 ~~~ html
 <button class="btn-pseudo">Haz clic aquí</button>
 ~~~
@@ -1575,33 +1477,82 @@ Este es un párrafo de ejemplo.
 }
 </style>
 ~~~
-### Ejemplo:
-<button class=btn-pseudo>Haz clic aquí</button>
+### 5\.3\.2 Ejemplo:
 
-<style> .btn-pseudo { position: relative; padding: 12px 24px; background: #6200ea; color: white; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; overflow: hidden; z-index: 1; transition: background 0.3s ease; }
+<button class="btn-pseudo">Haz clic aquí</button>
 
-.btn-pseudo:hover { background: #7b1fa2; }
+<style>
+.btn-pseudo {
+  position: relative;
+  padding: 12px 24px;
+  background: #6200ea;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
 
-.btn-pseudo:active { transform: scale(0.95); }
 
-.btn-pseudo:focus { outline: 2px dashed #ff9800; outline-offset: 4px; }
+.btn-pseudo:hover {
+  background: #7b1fa2;
+}
 
-.btn-pseudo::before { content: ""; position: absolute; top: 0; left: -90%; width: 100%; height: 100%; background: rgba(255,255,255,0.2); transform: skewX(-25deg); transition: left 0.5s ease; z-index: -1; }
 
-.btn-pseudo:hover::before { left: 90%; }
+.btn-pseudo:active {
+  transform: scale(0.95);
+}
 
-.btn-pseudo::after { content: "»"; position: absolute; right: 16px; opacity: 0; transition: opacity 0.3s ease, right 0.3s ease; }
 
-.btn-pseudo:hover::after { opacity: 1; right: 8px; } </style>
+.btn-pseudo:focus {
+  outline: 2px dashed #ff9800;
+  outline-offset: 4px;
+}
 
------
+
+.btn-pseudo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -90%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.btn-pseudo:hover::before {
+  left: 90%;
+}
+
+.btn-pseudo::after {
+  content: "»";
+  position: absolute;
+  right: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease, right 0.3s ease;
+}
+
+.btn-pseudo:hover::after {
+  opacity: 1;
+  right: 8px;
+}
+</style>
+
+---
+
 Para un listado más completo y detallado de todas las pseudo-clases y pseudo-elementos disponibles en CSS, puedes consultar la guía de referencia en ([css-tricks.com](https://css-tricks.com/almanac/pseudo-selectors/#letter-A)), donde encontrarás ejemplos prácticos y explicaciones organizadas alfabéticamente.
 
 -----
-# Transiciones y Animaciones básicas en CSS
-## 1\. Transiciones en CSS
+
+## 5\.4 Transiciones en CSS
 Las **transiciones** en CSS permiten que los cambios de estilo se realicen de forma **gradual** en lugar de inmediata, cuando un valor de propiedad cambia ([MDN Web Docs](https://developer.mozilla.org/es/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)).
-### Propiedades comunes de transición
+### 5\.4\.1 Propiedades comunes de transición
 - `transition-property`: La propiedad CSS que se animará (ej. `background-color`, `width`).
 - `transition-duration`: La duración del efecto (ej. `2s`).
 - `transition-timing-function`: Define la curva de velocidad (ej. `ease`, `linear`, `ease-in`, `ease-out`).
@@ -1609,7 +1560,7 @@ Las **transiciones** en CSS permiten que los cambios de estilo se realicen de fo
 
 La propiedad abreviada `transition` permite configurar fácilmente todos estos valores en una sola línea.\
 Como explica [CSS Reference](https://cssreference.io/property/transition/):
-### Código:
+### 5\.4\.2 Código:
 ~~~ css
 .ejemplo1 button {
   background-color: lightblue;
@@ -1625,15 +1576,27 @@ Como explica [CSS Reference](https://cssreference.io/property/transition/):
   <button style="padding:10px; border:none; cursor:pointer;">Pasa el cursor</button>
 </div>
 ~~~
-### Ejemplo:
-<div class=ejemplo1> <button style=padding:10px; border:none; cursor:pointer;>Pasa el cursor</button> </div>
 
-<style> .ejemplo1 button { background-color: lightblue; transition: background-color 0.5s ease; } .ejemplo1 button:hover { background-color: blue; color: white; } </style>
+### 5\.4\.3 Ejemplo:
 
+<div class="ejemplo1">
+  <button style="padding:10px; border:none; cursor:pointer;">Pasa el cursor</button>
+</div>
+
+<style>
+.ejemplo1 button {
+  background-color: lightblue;
+  transition: background-color 0.5s ease;
+}
+.ejemplo1 button:hover {
+  background-color: blue;
+  color: white;
+}
+</style>
 -----
-## 2\. Animaciones en CSS
+## 5\.5 Animaciones en CSS
 Las **animaciones** permiten definir una secuencia de cambios más compleja, controlada con **`@keyframes`**, que describe cómo deben evolucionar las propiedades a lo largo del tiempo ([MDN Web Docs](https://developer.mozilla.org/es/docs/Web/CSS/CSS_animations/Using_CSS_animations)).
-### Propiedades comunes de animación
+### 5\.5\.1 Propiedades comunes de animación
 - `animation-name`: Nombre de la animación definida con `@keyframes`.
 - `animation-duration`: Duración de la animación.
 - `animation-timing-function`: Velocidad (ej. `ease`, `linear`).
@@ -1643,7 +1606,7 @@ Las **animaciones** permiten definir una secuencia de cambios más compleja, con
 
 La propiedad abreviada `animation` permite configurar fácilmente todos estos valores en una sola línea de CSS.\
 Como explica [CSS Reference](https://cssreference.io/animations/):
-### Código:
+### 5\.5\.2 Código:
 ~~~ css
 @keyframes mover {
   0% { transform: translateX(0); }
@@ -1663,16 +1626,29 @@ Como explica [CSS Reference](https://cssreference.io/animations/):
   <div></div>
 </div>
 ~~~
-### Ejemplo:
-<div class=ejemplo2> <div></div> </div>
+### 5\.5\.3 Ejemplo:
+<div class="ejemplo2">
+  <div></div>
+</div>
 
-<style> @keyframes mover { 0% { transform: translateX(0); } 50% { transform: translateX(100px); } 100% { transform: translateX(0); } }
+<style>
+@keyframes mover {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(100px); }
+  100% { transform: translateX(0); }
+}
 
-.ejemplo2 div { width: 50px; height: 50px; background: red; animation: mover 3s infinite; } </style>
+.ejemplo2 div {
+  width: 50px;
+  height: 50px;
+  background: red;
+  animation: mover 3s infinite;
+}
+</style>
 
 -----
-## 3\. Ejemplo combinado de transición y animación
-### Código:
+## 5\.6 Ejemplo combinado de transición y animación
+### 5\.6\.1 Código:
 ~~~ css
 .ejemplo3 {
   width: 150px;
@@ -1704,17 +1680,58 @@ Como explica [CSS Reference](https://cssreference.io/animations/):
 ~~~ html
 <div class="ejemplo3">Hover</div>
 ~~~
-### Ejemplo:
-<div class=ejemplo3>Hover</div>
+### 5\.6\.2 Ejemplo:
+<div class="ejemplo3">Hover</div>
 
-<style> .ejemplo3 { width: 150px; height: 50px; background: linear-gradient(135deg, #2196f3, #21cbf3); border-radius: 16px; margin: 20px; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-family: sans-serif; animation: glow 3s infinite; transition: transform 0.6s ease, box-shadow 0.6s ease; }
+<style>
+.ejemplo3 {
+  width: 150px;
+  height: 50px;
+  background: linear-gradient(135deg, #2196f3, #21cbf3);
+  border-radius: 16px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  animation: glow 3s infinite;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
 
-.ejemplo3:hover { transform: scale(1.2) rotate(5deg); box-shadow: 0 12px 25px rgba(33, 150, 243, 0.5); }
+.ejemplo3:hover {
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 12px 25px rgba(33, 150, 243, 0.5);
+}
 
-@keyframes glow { 0%   { box-shadow: 0 0 5px #21cbf3; } 50%  { box-shadow: 0 0 25px #21cbf3, 0 0 50px #2196f3; } 100% { box-shadow: 0 0 5px #21cbf3; } } </style>
+@keyframes glow {
+  0%   { box-shadow: 0 0 5px #21cbf3; }
+  50%  { box-shadow: 0 0 25px #21cbf3, 0 0 50px #2196f3; }
+  100% { box-shadow: 0 0 5px #21cbf3; }
+}
+</style>
 
 -----
-## Conclusión
+# 6\. Conclusión
 En conclusión, CSS es una herramienta clave para transformar una página simple en un sitio atractivo, moderno y fácil de usar.\
 Gracias a sus funciones básicas y avanzadas (como selectores, propiedades, animaciones y diseños responsivos), los desarrolladores pueden crear experiencias web visualmente agradables y funcionales en cualquier dispositivo.\
 Como resumen del documento: **sin CSS la web sería desordenada y aburrida, pero con CSS se logran sitios dinámicos, claros y coherentes** (**Kaluvakuri & Vadiyala, 2016, p. 109**).
+
+# 7\. Referencia
+-	Kaluvakuri, S., & Vadiyala, V. R. (2016). Harnessing the potential of CSS: An exhaustive reference for web styling. Engineering International, 4(2), 95–110. https://doi.org/10.18034/ei.v4i2.682
+-	World Wide Web Consortium (W3C), Selectors Level 3. W3C Recommendation, 2018. [Online]. Available: https://www.w3.org/TR/selectors-3/
+-	K. J. Grant, CSS in Depth. Shelter Island, NY: Manning Publications, 2017. [Online]. Available: https://www.manning.com/books/css-in-depth
+-	M. Haverbeke, Eloquent JavaScript: A Modern Introduction to Programming, 3rd ed. San Francisco, CA: No Starch Press, 2018. [Online]. Available: https://eloquentjavascript.net/
+-	MDN Web Docs, Specificity - CSS cascade. Mozilla Developer Network, 2024. [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity
+-	FreeCodeCamp, What is CSS Specificity?, 2021. [Online]. Available: https://www.freecodecamp.org/news/what-is-css-specificity/
+-	GeeksforGeeks, Explain the concept of specificity in CSS, 2022. [Online]. Available: https://www.geeksforgeeks.org/css/explain-the-concept-of-specificity-in-css/
+-	MDN Web Docs, CSS: Unidades de medida. Mozilla Developer Network, s.f. [Online]. Available: https://developer.mozilla.org/es/docs/Web/CSS/length 
+-	MDN Web Docs. (2024). Positioning in CSS. Mozilla Developer Network. https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning 
+-	Jesusda. (s. f.). Introducción a CSS. Recuperado de https://www.jesusda.com/docs/ebooks/introduccion_css.pdf
+-	Ventics. (s. f.). Margen y relleno en CSS. Recuperado de https://ventics.com/margen-y-relleno-en-css/ 
+-	W3Schools. (s. f.). Modelo de caja en CSS. W3Schools. Recuperado de https://www-w3schools-com.translate.goog/css/css_boxmodel.asp?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc 
+-	George, L. (2020, junio 10). The theory of the box model: Margin and padding explained. Hashnode. Recuperado de https://laviedegeorge.hashnode.dev/the-theory-of-the-box-model-margin-and-padding-explained-ck88j5cgx00067rs1g4b1b6v5 
+-	MDN Web Docs. (s. f.). Introduction to the CSS box model. Mozilla. Recuperado de https://developer-mozilla-org.translate.goog/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=sge#:~:text=Every%20box%20is%20composed%20of,border%20edge%2C%20and%20margin%20edge 
+-	Oregoom. (s. f.). CSS color. Oregoom. Recuperado de https://oregoom.com/css/color/
+
